@@ -47,15 +47,15 @@ module.exports.embedLink = (message) => {
     }
 
     if (word.includes('https://enesceylan.github.io/mythic-companion/#/team-builder')) {
-      textArr[index] = '[Mythic Companion team builder](' + word + ')';
+      textArr[index] = '[team builder](' + word + ')';
     }
 
     if (word.includes('https://enesceylan.github.io/mythic-companion/#/cube')) {
-      textArr[index] = '[Mythic Companion cube of truth](' + word + ')';
+      textArr[index] = '[cube of truth](' + word + ')';
     }
 
     if (word.includes('https://enesceylan.github.io/mythic-companion/#/tierlist')) {
-      textArr[index] = '[Mythic Companion tierlist](' + word + ')';
+      textArr[index] = '[tierlist](' + word + ')';
     }
 
     if (
@@ -65,7 +65,7 @@ module.exports.embedLink = (message) => {
       word === 'https://enesceylan.github.io/mythic-companion/#' ||
       word === 'https://enesceylan.github.io/mythic-companion/#/'
     ) {
-      textArr[index] = '[Mythic Companion homepage](' + word + ')';
+      textArr[index] = '[Mythic Companion](' + word + ')';
     }
   });
 
@@ -80,6 +80,12 @@ module.exports.embedLink = (message) => {
       iconURL: 'https://media.discordapp.net/attachments/923331169263702107/930238589256744990/logo192.png',
     });
 
-  message.channel.send({ embeds: [websiteEmbed] });
+  message.channel.send({ embeds: [websiteEmbed] }).then((msg) => {
+    if (msg.description.includes('[BROKEN LINK]')) {
+      setTimeout(() => {
+        msg.delete();
+      }, 5000);
+    }
+  });
   message.delete({ timeout: 500 });
 };
