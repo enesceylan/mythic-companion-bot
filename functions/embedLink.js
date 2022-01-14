@@ -80,12 +80,6 @@ module.exports.embedLink = (message) => {
       iconURL: 'https://media.discordapp.net/attachments/923331169263702107/930238589256744990/logo192.png',
     });
 
-  message.channel.send({ embeds: [websiteEmbed] }).then((msg) => {
-    if (msg.description.includes('[BROKEN LINK]')) {
-      setTimeout(() => {
-        msg.delete();
-      }, 5000);
-    }
-  });
+  message.channel.send({ embeds: [websiteEmbed] });
   message.delete({ timeout: 500 });
 };
