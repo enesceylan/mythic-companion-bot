@@ -44,13 +44,21 @@ module.exports.embedLink = (message) => {
       } else {
         textArr[index] = '[BROKEN LINK]';
       }
-    } else if (word.includes('https://enesceylan.github.io/mythic-companion/#/team-builder')) {
+    }
+
+    if (word.includes('https://enesceylan.github.io/mythic-companion/#/team-builder')) {
       textArr[index] = '[Mythic Companion team builder](' + word + ')';
-    } else if (word.includes('https://enesceylan.github.io/mythic-companion/#/cube')) {
+    }
+
+    if (word.includes('https://enesceylan.github.io/mythic-companion/#/cube')) {
       textArr[index] = '[Mythic Companion cube of truth](' + word + ')';
-    } else if (word.includes('https://enesceylan.github.io/mythic-companion/#/tierlist')) {
+    }
+
+    if (word.includes('https://enesceylan.github.io/mythic-companion/#/tierlist')) {
       textArr[index] = '[Mythic Companion tierlist](' + word + ')';
-    } else if (
+    }
+
+    if (
       word === 'https://enesceylan.github.io/mythic-companion' ||
       word === 'https://enesceylan.github.io/mythic-companion/' ||
       word === 'https://enesceylan.github.io/mythic-companion//' ||
@@ -58,8 +66,6 @@ module.exports.embedLink = (message) => {
       word === 'https://enesceylan.github.io/mythic-companion/#/'
     ) {
       textArr[index] = '[Mythic Companion homepage](' + word + ')';
-    } else {
-      textArr[index] = '[BROKEN LINK]';
     }
   });
 
