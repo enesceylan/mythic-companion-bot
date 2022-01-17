@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js');
-const { destroyEmbedReply } = require('../functions/destroyEmbedReply');
+const { destroyEmbedConversation } = require('../functions/destroyEmbedConversation');
 
 module.exports.discord = (message) => {
   const discordEmbed = new MessageEmbed()
@@ -10,5 +10,5 @@ module.exports.discord = (message) => {
       iconURL: 'https://media.discordapp.net/attachments/923331169263702107/930238589256744990/logo192.png',
     });
 
-  destroyEmbedReply(message, discordEmbed, 10000);
+  destroyEmbedConversation(message, discordEmbed, 10000);
 };
