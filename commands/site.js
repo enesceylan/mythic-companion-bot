@@ -12,5 +12,5 @@ module.exports.site = (message) => {
       iconURL: 'https://media.discordapp.net/attachments/923331169263702107/930238589256744990/logo192.png',
     });
 
-  destroyEmbedConversation(message, homepage, 5000);
+  destroyEmbedConversation(message, homepage, 10000);
 };
