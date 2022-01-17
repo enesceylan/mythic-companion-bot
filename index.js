@@ -1,6 +1,8 @@
 const { Client, Intents } = require('discord.js');
 const { embedLink } = require('./functions/embedLink');
 const { site } = require('./commands/site');
+const { help } = require('./commands/help');
+const { discord } = require('./commands/discord');
 
 const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
