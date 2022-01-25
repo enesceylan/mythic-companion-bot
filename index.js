@@ -4,6 +4,8 @@ const { site } = require('./commands/site');
 const { help } = require('./commands/help');
 const { discord } = require('./commands/discord');
 
+const { welcome } = require('./functions/welcomeMessage');
+
 const client = new Client({
   intents: [
     Intents.FLAGS.GUILDS,
